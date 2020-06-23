@@ -18,6 +18,11 @@ steps:
     modifyOutputPath: false
     arguments: --output $(Build.ArtifactStagingDirectory)
 
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '2.1.x'
+
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)'
