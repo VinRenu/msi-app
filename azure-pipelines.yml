@@ -18,10 +18,11 @@ steps:
     modifyOutputPath: false
     arguments: --output $(Build.ArtifactStagingDirectory)
 
-- task: UseDotNet@2
+- task: BuildInstaller@1
   inputs:
-    packageType: 'sdk'
-    version: '2.1.x'
+    installTaskMode: 'solution'
+    SlnPath: '**/*sln'
+    VsVersion: 'VS2017'
 
 - task: PublishPipelineArtifact@1
   inputs:
