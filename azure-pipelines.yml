@@ -16,7 +16,7 @@ steps:
   inputs:
     installTaskMode: 'solution'
     SlnPath: '**/*sln'
-    VsVersion: 'VS2017'
+    VsVersion: 'VS2019'
 
 - task: PublishPipelineArtifact@1
   inputs:
